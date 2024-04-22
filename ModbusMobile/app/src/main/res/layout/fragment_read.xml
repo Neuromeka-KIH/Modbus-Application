@@ -58,7 +58,7 @@
                 android:padding="8dp"
                 android:text="해당 변수 값"
                 android:textColor="#8977AD"
-                android:textSize="19dp"
+                android:textSize="19sp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="206dp"
                 tools:layout_editor_absoluteY="75dp" />

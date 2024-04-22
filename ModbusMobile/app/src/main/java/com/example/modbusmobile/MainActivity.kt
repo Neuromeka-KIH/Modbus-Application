@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private var modbusClient: ModbusClient? = null
     private var readFragment: ReadFragment? = null
     private var writeFragment: WriteFragment? = null
+    private var statusFragment: StatusFragment? = null
 
     fun getModbusClient(): ModbusClient? {
         return modbusClient
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
                 when (tab?.text) {
                     "Modbus 읽기" -> showReadFragment()
                     "Modbus 쓰기" -> showWriteFragment()
+                    "Robot Status" -> showStatusFragment()
                 }
             }
 
@@ -119,6 +121,16 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainer, fragment)
             .commit()
     }
+
+    private fun showStatusFragment() {
+        val fragment = statusFragment ?: StatusFragment.newInstance()
+        statusFragment = fragment
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
+    }
+
+
 
     private fun showToast(message: String) {
         runOnUiThread {
