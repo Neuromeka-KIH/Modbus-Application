@@ -1,4 +1,5 @@
 package com.example.modbusmobile
+
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -20,14 +21,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var connectButton: Button
     private lateinit var tabLayout: TabLayout
 
-    // Modbus 클라이언트 멤버 변수 추가
     private var modbusClient: ModbusClient? = null
+    private var readFragment: ReadFragment? = null
+    private var writeFragment: WriteFragment? = null
 
     fun getModbusClient(): ModbusClient? {
         return modbusClient
     }
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
 
         connectButton.setOnClickListener { connectToModbusServer() }
 
-        // 탭 선택 리스너 설정
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when (tab?.text) {
@@ -53,11 +52,8 @@ class MainActivity : AppCompatActivity() {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
 
-        // 초기에 첫 번째 탭 선택
-//        tabLayout.getTabAt(0)?.select()
         showReadFragment()
     }
-
     private fun connectToModbusServer() {
         val ipAddress = ipEditText.text.toString()
         val portNumberStr = portEditText.text.toString()
@@ -109,17 +105,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showReadFragment() {
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fragmentContainer, ReadFragment.newInstance())
-            commit()
-        }
+        val fragment = readFragment ?: ReadFragment.newInstance()
+        readFragment = fragment
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
     }
 
     private fun showWriteFragment() {
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fragmentContainer, WriteFragment.newInstance())
-            commit()
-        }
+        val fragment = writeFragment ?: WriteFragment.newInstance()
+        writeFragment = fragment
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
     }
 
     private fun showToast(message: String) {
