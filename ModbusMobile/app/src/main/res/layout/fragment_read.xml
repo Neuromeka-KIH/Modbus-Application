@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRead"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+
+        <!-- 테이블 헤더 -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="75dp">
+
+            <!-- 모드버스 주소 -->
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="모드버스 주소"
+                android:textColor="#8977AD"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="75dp" />
+
+            <!-- 수직 구분선 -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_divider"
+                tools:layout_editor_absoluteX="205dp"
+                tools:layout_editor_absoluteY="75dp" />
+
+            <!-- 전송할 값 -->
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="해당 변수 값"
+                android:textColor="#8977AD"
+                android:textSize="19dp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="206dp"
+                tools:layout_editor_absoluteY="75dp" />
+
+        </TableRow>
+
+        <!-- 행 -->
+        <TableRow
+            android:id="@+id/firstRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="120dp">
+
+            <!-- 모드버스 주소 입력 -->
+            <EditText
+                android:id="@+id/readTextModbusAddress1"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="모드버스 주소 입력"
+                android:inputType="number"
+                android:padding="15dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="120dp" />
+
+            <!-- 수직 구분선 -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_divider"
+                tools:layout_editor_absoluteX="205dp"
+                tools:layout_editor_absoluteY="120dp" />
+
+            <!-- 전송할 값 입력 -->
+            <TextView
+                android:id="@+id/TextValueToRead1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="값 확인"
+                android:inputType="none"
+                android:padding="15dp"
+                tools:layout_editor_absoluteX="206dp"
+                tools:layout_editor_absoluteY="120dp" />
+        </TableRow>
+
+        <!-- 두 번째 행 -->
+        <TableRow
+            android:id="@+id/secondRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="197dp">
+
+            <!-- 모드버스 주소 입력 -->
+            <EditText
+                android:id="@+id/readTextModbusAddress2"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="모드버스 주소 입력"
+                android:inputType="number"
+                android:padding="15dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="197dp" />
+
+            <!-- 수직 구분선 -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_divider"
+                tools:layout_editor_absoluteX="205dp"
+                tools:layout_editor_absoluteY="197dp" />
+
+            <!-- 전송할 값 입력 -->
+            <TextView
+                android:id="@+id/TextValueToRead2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="값 확인"
+                android:inputType="none"
+                android:padding="15dp"
+                tools:layout_editor_absoluteX="206dp"
+                tools:layout_editor_absoluteY="197dp" />
+        </TableRow>
+
+        <!-- 세 번째 행 -->
+        <TableRow
+            android:id="@+id/thirdRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="275dp">
+
+            <!-- 모드버스 주소 입력 -->
+            <EditText
+                android:id="@+id/readTextModbusAddress3"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="모드버스 주소 입력"
+                android:inputType="number"
+                android:padding="15dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="275dp" />
+
+            <!-- 수직 구분선 -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_divider"
+                tools:layout_editor_absoluteX="205dp"
+                tools:layout_editor_absoluteY="275dp" />
+
+            <!-- 전송할 값 입력 -->
+            <TextView
+                android:id="@+id/TextValueToRead3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="값 확인"
+                android:inputType="none"
+                android:padding="15dp"
+                tools:layout_editor_absoluteX="206dp"
+                tools:layout_editor_absoluteY="275dp" />
+        </TableRow>
+
+        <!-- 네 번째 행 -->
+        <TableRow
+            android:id="@+id/fourthRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="352dp">
+
+            <!-- 모드버스 주소 입력 -->
+            <EditText
+                android:id="@+id/readTextModbusAddress4"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="모드버스 주소 입력"
+                android:inputType="number"
+                android:padding="15dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="352dp" />
+
+            <!-- 수직 구분선 -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_divider"
+                tools:layout_editor_absoluteX="205dp"
+                tools:layout_editor_absoluteY="352dp" />
+
+            <!-- 전송할 값 입력 -->
+            <TextView
+                android:id="@+id/TextValueToRead4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="값 확인"
+                android:inputType="none"
+                android:padding="15dp"
+                tools:layout_editor_absoluteX="206dp"
+                tools:layout_editor_absoluteY="352dp" />
+        </TableRow>
+
+
+    </TableLayout>
+
+    <!-- 전송 버튼 -->
+    <Button
+        android:id="@+id/buttonRead"
+        android:layout_width="196dp"
+        android:layout_height="60dp"
+        android:text="읽기"
+        android:textSize="21dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tableLayout"
+        app:layout_constraintVertical_bias="0.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
